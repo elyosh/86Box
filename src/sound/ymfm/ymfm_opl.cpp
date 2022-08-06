@@ -1477,12 +1477,7 @@ uint8_t ymf289b::read_status()
 
 uint8_t ymf289b::read_data()
 {
-	uint8_t result = 0xff;
-
-	// YMF289B can read register data back
-	if (ymf289b_mode())
-		result = m_fm.regs().read(m_address);
-	return result;
+	return m_fm.regs().read(m_address);
 }
 
 
